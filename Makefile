@@ -3,6 +3,7 @@ objects = file.o scanner.o workdir.o
 CPPFLAGS += -shared -fPIC -std=c++11 -Iinclude/
 
 gnu: $(addprefix src/gnu/, $(objects))
+	mkdir bin
 	g++ $(CPPFLAGS) $(addprefix src/gnu/, $(objects)) -o bin/libfsutil.so
 
 install-gnu:
